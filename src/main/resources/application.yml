@@ -1,10 +1,8 @@
 redis:
-  cache:
-    host: localhost
-    port: 6379
-    commandTimeout: 500
-    expireSeconds: 1000
-    password: 
+  host: localhost
+  port: 6379
+  dbIndex: 0
+  password: 
 server:
     port: 8090
 joinfaces:
@@ -14,7 +12,7 @@ joinfaces:
 spring:
   datasource:
     name: datasource
-    url: jdbc:postgresql://localhost:5432/mydocs
+    url: jdbc:postgresql://localhost:5432/backoffice
     username: postgres
     password: mypassword
     driver-class-name: org.postgresql.Driver
@@ -43,3 +41,7 @@ spring:
         jdbc.lob.non_contextual_creation: true
         order_updates: true
         batch_versioned_data: true
+rest:
+  client:
+    sslbypass: true
+    readTimeout: 10000
