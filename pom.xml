@@ -21,6 +21,7 @@
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <codefun-common.version>1.0</codefun-common.version>
         <codefun-service.version>1.0</codefun-service.version>
+        <springfox.version>3.0.0</springfox.version>
     </properties>
 
     <parent>
@@ -95,6 +96,16 @@
             <artifactId>codefun-service</artifactId>
             <version>${codefun-service.version}</version>
         </dependency>
+        <dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox.version}</version>
+		</dependency>
     </dependencies>
 
     <build>
