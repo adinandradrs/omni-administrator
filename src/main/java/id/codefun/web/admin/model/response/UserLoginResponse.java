@@ -1,4 +1,4 @@
-package id.codefun.front.admin.model.response;
+package id.codefun.web.admin.model.response;
 
 import java.io.Serializable;
 

@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>id.codefun.front.admin</groupId>
-    <artifactId>front-admin</artifactId>
+    <groupId>id.codefun.web.admin</groupId>
+    <artifactId>web-admin</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>Front Admin</name>
-    <description>Front Admin Web</description>
+    <name>Web Admin</name>
+    <description>Administrator Website</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

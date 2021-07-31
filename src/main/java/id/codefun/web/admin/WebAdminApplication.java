@@ -1,13 +1,13 @@
-package id.codefun.front.admin;
+package id.codefun.web.admin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AdminWebApplication {
+public class WebAdminApplication {
 
     public static void main(String [] args){
-        SpringApplication.run(AdminWebApplication.class, args);
+        SpringApplication.run(WebAdminApplication.class, args);
     }
     
 }

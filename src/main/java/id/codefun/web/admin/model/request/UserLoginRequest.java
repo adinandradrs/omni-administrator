@@ -1,4 +1,4 @@
-package id.codefun.front.admin.model.request;
+package id.codefun.web.admin.model.request;
 
 import java.io.Serializable;
 import lombok.AllArgsConstructor;

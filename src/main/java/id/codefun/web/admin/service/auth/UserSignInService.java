@@ -1,8 +1,9 @@
-package id.codefun.front.admin.service.auth;
+package id.codefun.web.admin.service.auth;
 
 import org.springframework.stereotype.Service;
-import id.codefun.front.admin.model.request.UserLoginRequest;
-import id.codefun.front.admin.model.response.UserLoginResponse;
+
+import id.codefun.web.admin.model.request.UserLoginRequest;
+import id.codefun.web.admin.model.response.UserLoginResponse;
 
 @Service
 public class UserSignInService {
