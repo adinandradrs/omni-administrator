@@ -2,13 +2,13 @@ redis:
   host: localhost
   port: 6379
   dbIndex: 0
-  password: 
+  password: r
 server:
     port: 8090
 joinfaces:
   richfaces:
-    base-skin: ruby
-    skin: ruby
+    base-skin: emeraldTown
+    skin: emeraldTown
 spring:
   datasource:
     name: datasource
@@ -46,6 +46,8 @@ api:
     path: '/api/administrator'
   key:
     internal: "817a2be3-2b92-4f55-a740-e290ce63242f"
+swagger:
+  host: "localhost:8090"
 app:
   web:
     path: '/apps'

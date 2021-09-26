@@ -39,7 +39,6 @@ import id.codefun.web.administrator.util.UserUtility;
 import io.jsonwebtoken.ExpiredJwtException;
 import lombok.extern.slf4j.Slf4j;
 import rx.Observable;
-
 import org.springframework.web.filter.OncePerRequestFilter;
 
 @Configuration
@@ -54,7 +53,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	private WebUtility webUtility;
 
     private static final String [] ignorePath = {
-		"/login.jsf"
+		"/org.richfaces.resources",
+		"/javax.faces.resource",
+		"/favicon.ico",
+		"/assets",
+		"/login.jsf",
 	};
 
 	@Value("${api.key.internal}")

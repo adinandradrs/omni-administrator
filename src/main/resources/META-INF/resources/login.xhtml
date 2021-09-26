@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ra4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich">
+<f:view contentType="text/html">
+    <h:head>
+        <title>CodeFun | Administrator Login</title>
+        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+        <link rel="stylesheet" type="text/css" href="/assets/themes/login.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/themes/richfaces-v2.css" />
+    </h:head>
+    <h:body>
+        <f:metadata>
+            <f:viewAction action="#{sessionController.doFetchSession}"/>
+        </f:metadata>
+        <h:form>
+            <div class="header">
+                <div class="header-text">
+                    <h1>
+                        <span class="color-green">Code</span>.<span class="color-blue">Fun</span>
+                    </h1>
+                    <h3>Web Administrator</h3>
+                </div>
+            </div>
+            <rich:panel style="width:97%; margin:0 auto;" header="#{msg['login.system']}" headerClass="panel-header" bodyClass="login-body">
+                <h4><h:outputLabel value="#{sessionController.getCurrentDateInBahasa()}"></h:outputLabel></h4>
+                <hr class="separator" />
+                <h:panelGrid columns="4" id="grid" style="width:25%;">
+                    <h:outputText value="#{msg['login.username']}" />
+                    <h:outputText value=":" />
+                    <h:inputText label="#{msg['login.username']}" id="email">
+                        <f:validateRequired />
+                    </h:inputText>
+                    <rich:message for="email" ajaxRendered="true" />
+                    <h:outputText value="#{msg['login.password']}" />
+                    <h:outputText value=":" />
+                    <h:inputSecret label="#{msg['login.password']}" id="password">
+                        <f:validateRequired />
+                    </h:inputSecret>
+                    <rich:message for="password" ajaxRendered="true" />
+                    <h:outputText value="" />
+                    <h:outputText value="" />
+                    <h:commandButton value="#{msg['login.submit']}"></h:commandButton>
+                    <h:outputText value="" />
+                    <h:outputText value="" />
+                    <h:outputText value="" />
+                    <h:commandLink value="#{msg['login.forgotpassword']}"></h:commandLink>
+                </h:panelGrid>
+            </rich:panel>
+            <div class="footer">&copy; 2021 Adinandra Dharmasurya</div>
+        </h:form>
+    </h:body>
+</f:view>
+</html>

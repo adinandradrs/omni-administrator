@@ -1,0 +1,11 @@
+button, input[type="reset"], input[type="submit"], input[type="button"]{
+    padding:3px;
+}
+
+textarea, input[type="text"], input[type="password"], select {
+    padding:2px;   
+}
+
+.panel-header{
+    padding:4px !important;
+}
