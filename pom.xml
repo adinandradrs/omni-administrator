@@ -85,7 +85,10 @@
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
-
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
         <dependency>
             <groupId>id.codefun.common</groupId>
             <artifactId>codefun-common</artifactId>

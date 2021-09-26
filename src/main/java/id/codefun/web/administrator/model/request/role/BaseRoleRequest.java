@@ -1,8 +1,7 @@
 package id.codefun.web.administrator.model.request.role;
 
 import java.util.List;
-
-import id.co.bankmandiri.kum.user.model.request.shared.SessionRequest;
+import id.codefun.web.administrator.model.request.shared.SessionRequest;
 import io.swagger.annotations.ApiModelProperty;
 
 public class BaseRoleRequest extends SessionRequest {

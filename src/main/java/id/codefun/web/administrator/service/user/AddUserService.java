@@ -32,14 +32,15 @@ public class AddUserService implements BaseService<AddUserRequest, ValidationRes
     public ValidationResponse execute(AddUserRequest request) {
         if(validateUserService.execute(null, request.getEmail(), request.getFullname(), request.getRoleId()).getResult()){
             this.roleRepository.findByIdAndActive(request.getRoleId()).ifPresentOrElse(data-> 
-                userRepository.save(
-                    User.builder()
-                    .email(request.getEmail())
-                    .fullname(request.getFullname())
-                    .role(roleRepository.getOne(request.getRoleId()))
-                    .isDeleted(false)
-                    .build()
-                ),
+                {
+                    User newUser = new User();
+                    newUser.setEmail(request.getEmail());
+                    newUser.setRole(data);
+                    newUser.setFullname(request.getFullname());
+                    newUser.setOrganization(request.getOrganization());
+                    newUser.setDepartment(request.getDepartment());
+                    userRepository.save(newUser);
+                },
                 ()->{
                     log.error("Role ID {} is not found for user = {}", request.getRoleId(), request.getEmail());
                     throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Role ID is not valid for new user");

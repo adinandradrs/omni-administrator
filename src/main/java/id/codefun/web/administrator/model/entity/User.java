@@ -1,7 +1,6 @@
 package id.codefun.web.administrator.model.entity;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,11 +16,9 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import id.codefun.common.model.entity.BaseEntity;
-import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
 @Table(name = "users", indexes = {
     @Index(name = "USERS_INDEX_0", columnList = "status"),
     @Index(name = "USERS_INDEX_1", columnList = "email"),
