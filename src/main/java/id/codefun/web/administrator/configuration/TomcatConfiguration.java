@@ -9,7 +9,7 @@ public class TomcatConfiguration {
 
     @Bean
     public TomcatServletWebServerFactory tomcatFactory() {
-        return new CustomTomcatServletWebServerFactory();
+        return new TomcatServletWebServerFactoryConfiguration();
     }
     
 }

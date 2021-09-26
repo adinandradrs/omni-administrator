@@ -8,7 +8,7 @@ import org.apache.tomcat.util.scan.StandardJarScanner;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.util.StringUtils;
 
-public class CustomTomcatServletWebServerFactory extends TomcatServletWebServerFactory  {
+public class TomcatServletWebServerFactoryConfiguration extends TomcatServletWebServerFactory  {
     
     @Override
     protected void postProcessContext(Context context) {

@@ -41,6 +41,21 @@ spring:
         jdbc.lob.non_contextual_creation: true
         order_updates: true
         batch_versioned_data: true
+api:
+  micro:
+    path: '/api/administrator'
+  key:
+    internal: "817a2be3-2b92-4f55-a740-e290ce63242f"
+app:
+  web:
+    path: '/apps'
+  jwt:
+    expiration: 720
+    refreshexpiration: 10800
+    secret: "Aval4nch3X8_a!324$"
+    refreshsecret: "TuRb0$_p!934#"
+  user:
+    regexPasswd: "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$"
 rest:
   client:
     sslbypass: true
