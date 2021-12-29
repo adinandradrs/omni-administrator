@@ -10,10 +10,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan({"id.codefun.web", "id.codefun.service"})
 @EntityScan ("id.codefun.omni.administrator.model.entity")
 @EnableJpaRepositories ("id.codefun.omni.administrator.repository")
-public class WebAdministratorApplication {
+public class OmniAdministratorApplication {
 
     public static void main(String [] args){
-        SpringApplication.run(WebAdministratorApplication.class, args);
+        SpringApplication.run(OmniAdministratorApplication.class, args);
     }
     
 }

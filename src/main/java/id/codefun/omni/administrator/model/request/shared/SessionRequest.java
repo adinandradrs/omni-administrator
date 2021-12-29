@@ -1,4 +1,4 @@
-package id.codefun.web.administrator.model.request.shared;
+package id.codefun.omni.administrator.model.request.shared;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;

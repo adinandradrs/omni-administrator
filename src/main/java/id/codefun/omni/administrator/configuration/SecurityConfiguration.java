@@ -1,4 +1,4 @@
-package id.codefun.web.administrator.configuration;
+package id.codefun.omni.administrator.configuration;
 
 import id.codefun.service.util.CacheUtility;
 import id.codefun.service.util.CodefunConstants;
@@ -32,10 +32,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
-import id.codefun.web.administrator.model.response.UserLoginResponse;
-import id.codefun.web.administrator.service.user.UserSecurityService;
-import id.codefun.web.administrator.util.Constants;
-import id.codefun.web.administrator.util.UserUtility;
+import id.codefun.omni.administrator.model.response.UserLoginResponse;
+import id.codefun.omni.administrator.service.user.UserSecurityService;
+import id.codefun.omni.administrator.util.Constants;
+import id.codefun.omni.administrator.util.UserUtility;
 import io.jsonwebtoken.ExpiredJwtException;
 import lombok.extern.slf4j.Slf4j;
 import rx.Observable;

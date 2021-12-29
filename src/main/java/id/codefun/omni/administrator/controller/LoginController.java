@@ -1,4 +1,4 @@
-package id.codefun.web.administrator.controller;
+package id.codefun.omni.administrator.controller;
 
 import javax.annotation.ManagedBean;
 import javax.faces.view.ViewScoped;
