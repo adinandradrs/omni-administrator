@@ -2,7 +2,7 @@ redis:
   host: localhost
   port: 6379
   dbIndex: 0
-  password: r
+  password: r3d1sp4s$
 server:
     port: 8090
 joinfaces:
