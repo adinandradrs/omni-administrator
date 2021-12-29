@@ -1,9 +1,7 @@
-package id.codefun.web.administrator.model.response;
+package id.codefun.omni.administrator.model.response;
 
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
-
 import id.codefun.common.model.response.BaseResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

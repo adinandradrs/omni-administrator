@@ -1,4 +1,4 @@
-package id.codefun.web.administrator.util;
+package id.codefun.omni.administrator.util;
 
 import java.util.HashMap;
 import java.util.Map;

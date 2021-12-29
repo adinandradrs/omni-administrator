@@ -1,4 +1,4 @@
-package id.codefun.web.administrator.util;
+package id.codefun.omni.administrator.util;
 
 import java.util.Date;
 import java.util.regex.Matcher;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import id.codefun.service.util.CacheUtility;
-import id.codefun.web.administrator.model.response.UserLoginResponse;
+import id.codefun.omni.administrator.model.response.UserLoginResponse;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;

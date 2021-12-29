@@ -1,8 +1,8 @@
-package id.codefun.web.administrator.service.user;
+package id.codefun.omni.administrator.service.user;
 
 import id.codefun.service.util.CodefunConstants;
-import id.codefun.web.administrator.repository.UserRepository;
-import id.codefun.web.administrator.util.UserPrinciple;
+import id.codefun.omni.administrator.repository.UserRepository;
+import id.codefun.omni.administrator.util.UserPrinciple;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

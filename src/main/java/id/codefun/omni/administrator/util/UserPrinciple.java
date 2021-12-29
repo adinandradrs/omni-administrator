@@ -1,11 +1,11 @@
-package id.codefun.web.administrator.util;
+package id.codefun.omni.administrator.util;
 
 import java.util.Collection;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import id.codefun.web.administrator.model.entity.User;
+import id.codefun.omni.administrator.model.entity.User;
 import lombok.Data;
 
 @Data
