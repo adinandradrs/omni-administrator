@@ -1,4 +1,4 @@
-package id.codefun.web.administrator.model.request.user;
+package id.codefun.omni.administrator.model.request.user;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;

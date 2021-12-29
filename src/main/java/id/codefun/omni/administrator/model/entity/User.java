@@ -1,4 +1,4 @@
-package id.codefun.web.administrator.model.entity;
+package id.codefun.omni.administrator.model.entity;
 
 import java.util.Date;
 import javax.persistence.Column;

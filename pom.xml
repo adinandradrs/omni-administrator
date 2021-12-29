@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>id.codefun.web.administrator</groupId>
-    <artifactId>web-administrator</artifactId>
+    <groupId>id.codefun.omni.administrator</groupId>
+    <artifactId>omni-administator</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 

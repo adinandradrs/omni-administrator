@@ -1,4 +1,4 @@
-package id.codefun.web.administrator.model.entity;
+package id.codefun.omni.administrator.model.entity;
 
 import java.util.HashSet;
 import java.util.Set;

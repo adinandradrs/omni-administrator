@@ -1,4 +1,4 @@
-package id.codefun.web.administrator.configuration;
+package id.codefun.omni.administrator.configuration;
 
 import java.util.LinkedHashSet;
 import java.util.Set;

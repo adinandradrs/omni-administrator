@@ -1,4 +1,4 @@
-package id.codefun.web.administrator.model.request.user;
+package id.codefun.omni.administrator.model.request.user;
 
 import id.codefun.common.model.request.BaseRequest;
 import io.swagger.annotations.ApiModelProperty;
