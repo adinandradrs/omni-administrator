@@ -1,4 +1,4 @@
-package id.codefun.web.administrator.controller;
+package id.codefun.omni.administrator.controller;
 
 import java.util.Calendar;
 import java.util.List;
@@ -8,7 +8,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.context.annotation.SessionScope;
-import id.codefun.web.administrator.util.Constants;
+import id.codefun.omni.administrator.util.Constants;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 

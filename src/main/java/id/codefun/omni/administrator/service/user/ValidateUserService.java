@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import id.codefun.common.model.response.ValidationResponse;
 import id.codefun.common.service.BaseService;
-import id.codefun.web.administrator.model.request.user.AddUserRequest;
-import id.codefun.web.administrator.repository.UserRepository;
+import id.codefun.omni.administrator.model.request.user.AddUserRequest;
+import id.codefun.omni.administrator.repository.UserRepository;
 import lombok.extern.log4j.Log4j2;
 
 @Service
