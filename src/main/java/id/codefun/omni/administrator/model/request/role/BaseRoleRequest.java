@@ -1,7 +1,7 @@
-package id.codefun.web.administrator.model.request.role;
+package id.codefun.omni.administrator.model.request.role;
 
 import java.util.List;
-import id.codefun.web.administrator.model.request.shared.SessionRequest;
+import id.codefun.omni.administrator.model.request.shared.SessionRequest;
 import io.swagger.annotations.ApiModelProperty;
 
 public class BaseRoleRequest extends SessionRequest {
