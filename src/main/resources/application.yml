@@ -12,11 +12,11 @@ joinfaces:
 spring:
   datasource:
     name: datasource
-    url: jdbc:postgresql://localhost:5432/backoffice
-    username: postgres
-    password: mypassword
-    driver-class-name: org.postgresql.Driver
-    platform: postgres
+    url: jdbc:mysql://localhost:3306/backoffice
+    username: omniguys
+    password: dbpassword
+    driver-class-name: com.mysql.jdbc.Driver
+    platform: mysql
     filters: stat
     maxActive: 20
     initialSize: 1
@@ -30,13 +30,31 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
+    hikari:
+      connection-timeout: 50000
+      idle-timeout: 300000
+      max-lifetime: 900000
+      maximum-pool-size: 40
+      minimum-idle: 10
+      pool-name: omniadministratordbpool
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+        useLocalSessionState: true
+        rewriteBatchedStatements: true
+        cacheResultSetMetadata: true
+        cacheServerConfiguration: true
   jpa:
     hibernate:
+      connection:
+        provider_class: "com.zaxxer.hikari.hibernate.HikariConnectionProvider"
       ddl-auto: update
     show-sql: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        dialect: org.hibernate.dialect.MySQL5Dialect
         hbm2ddl.auto: update
         jdbc.lob.non_contextual_creation: true
         order_updates: true
