@@ -21,8 +21,7 @@ import lombok.Data;
 @Data
 @Table(name = "users", indexes = {
     @Index(name = "USERS_INDEX_0", columnList = "status"),
-    @Index(name = "USERS_INDEX_1", columnList = "email"),
-    @Index(name = "USERS_INDEX_2", columnList = "is_deleted")
+    @Index(name = "USERS_INDEX_1", columnList = "is_deleted")
 })
 @Entity
 public class User extends BaseEntity {
@@ -33,10 +32,10 @@ public class User extends BaseEntity {
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
-    @Column(name="email")
+    @Column(name="email", length = 350, unique = true)
     private String email;
 
-    @Column(name="fullname")
+    @Column(name="fullname", length = 255)
     private String fullname;
 
     @Column(name="organization", length = 100)
@@ -45,7 +44,7 @@ public class User extends BaseEntity {
     @Column(name="department", length = 100)
     private String department;
 
-    @Column(name = "password")
+    @Column(name = "password", length = 500)
     private String password;
 
     @Column(name = "status")

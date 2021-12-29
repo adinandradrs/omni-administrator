@@ -12,10 +12,10 @@ joinfaces:
 spring:
   datasource:
     name: datasource
-    url: jdbc:mysql://localhost:3306/backoffice
+    url: jdbc:mysql://localhost:3306/omni_administrator
     username: omniguys
     password: dbpassword
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     platform: mysql
     filters: stat
     maxActive: 20
