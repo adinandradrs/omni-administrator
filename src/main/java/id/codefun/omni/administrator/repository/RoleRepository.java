@@ -1,7 +1,6 @@
-package id.codefun.web.administrator.repository;
+package id.codefun.omni.administrator.repository;
 
 import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;

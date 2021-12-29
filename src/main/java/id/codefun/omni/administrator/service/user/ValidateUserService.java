@@ -1,4 +1,4 @@
-package id.codefun.web.administrator.service.user;
+package id.codefun.omni.administrator.service.user;
 
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;

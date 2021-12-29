@@ -1,4 +1,4 @@
-package id.codefun.web.administrator;
+package id.codefun.omni.administrator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan({"id.codefun.web", "id.codefun.service"})
-@EntityScan ("id.codefun.web.administrator.model.entity")
-@EnableJpaRepositories ("id.codefun.web.administrator.repository")
+@EntityScan ("id.codefun.omni.administrator.model.entity")
+@EnableJpaRepositories ("id.codefun.omni.administrator.repository")
 public class WebAdministratorApplication {
 
     public static void main(String [] args){

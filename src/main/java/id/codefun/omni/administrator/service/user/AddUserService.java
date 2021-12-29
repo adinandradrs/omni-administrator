@@ -1,4 +1,4 @@
-package id.codefun.web.administrator.service.user;
+package id.codefun.omni.administrator.service.user;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
