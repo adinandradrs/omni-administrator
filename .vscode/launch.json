@@ -9,6 +9,16 @@
             "mainClass": "id.codefun.web.administrator.WebAdministratorApplication",
             "projectName": "web-administrator",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-OmniAdministratorApplication<omni-administator>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "id.codefun.omni.administrator.OmniAdministratorApplication",
+            "projectName": "omni-administator",
+            "args": ""
         }
     ]
 }

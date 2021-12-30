@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan({"id.codefun.web", "id.codefun.service"})
+@ComponentScan({"id.codefun.omni", "id.codefun.service"})
 @EntityScan ("id.codefun.omni.administrator.model.entity")
 @EnableJpaRepositories ("id.codefun.omni.administrator.repository")
 public class OmniAdministratorApplication {

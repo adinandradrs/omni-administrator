@@ -16,15 +16,20 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import id.codefun.common.model.entity.BaseEntity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Table(name = "users", indexes = {
     @Index(name = "USERS_INDEX_0", columnList = "status"),
-    @Index(name = "USERS_INDEX_1", columnList = "email"),
-    @Index(name = "USERS_INDEX_2", columnList = "is_deleted")
+    @Index(name = "USERS_INDEX_1", columnList = "is_deleted")
 })
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User extends BaseEntity {
 
     @Id
@@ -33,10 +38,10 @@ public class User extends BaseEntity {
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
-    @Column(name="email")
+    @Column(name="email", length = 350, unique = true)
     private String email;
 
-    @Column(name="fullname")
+    @Column(name="fullname", length = 255)
     private String fullname;
 
     @Column(name="organization", length = 100)
@@ -45,7 +50,7 @@ public class User extends BaseEntity {
     @Column(name="department", length = 100)
     private String department;
 
-    @Column(name = "password")
+    @Column(name = "password", length = 500)
     private String password;
 
     @Column(name = "status")
