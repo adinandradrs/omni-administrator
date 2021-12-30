@@ -16,7 +16,10 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import id.codefun.common.model.entity.BaseEntity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Table(name = "users", indexes = {
@@ -24,6 +27,9 @@ import lombok.Data;
     @Index(name = "USERS_INDEX_1", columnList = "is_deleted")
 })
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User extends BaseEntity {
 
     @Id

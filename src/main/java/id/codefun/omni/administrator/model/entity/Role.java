@@ -17,7 +17,10 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import id.codefun.common.model.entity.BaseEntity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
@@ -25,6 +28,9 @@ import lombok.Data;
     @Index(name = "ROLES_INDX_0", columnList = "role_name"),
     @Index(name = "ROLES_INDX_1", columnList = "status")
 })
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Role extends BaseEntity {
 
     @Id

@@ -13,11 +13,18 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedBy;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Table(name = "tasks")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Task {
 
     @Id
@@ -29,8 +36,8 @@ public class Task {
     @Column(name = "module", length = 20)
     private String module;
 
-    @Column(name = "task_type", length = 5)
-    private Integer taskType;
+    @Column(name = "task_type", length = 10)
+    private String taskType;
 
     @Column(name = "status")
     private Integer status;

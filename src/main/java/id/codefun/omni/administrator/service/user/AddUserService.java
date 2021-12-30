@@ -11,8 +11,8 @@ import id.codefun.omni.administrator.model.entity.User;
 import id.codefun.omni.administrator.model.request.user.AddUserRequest;
 import id.codefun.omni.administrator.repository.RoleRepository;
 import id.codefun.omni.administrator.repository.UserRepository;
+import id.codefun.service.util.CodefunConstants;
 import lombok.extern.log4j.Log4j2;
-
 @Service
 @Log4j2
 public class AddUserService implements BaseService<AddUserRequest, ValidationResponse> {
@@ -33,12 +33,16 @@ public class AddUserService implements BaseService<AddUserRequest, ValidationRes
         if(validateUserService.execute(null, request.getEmail(), request.getFullname(), request.getRoleId()).getResult()){
             this.roleRepository.findByIdAndActive(request.getRoleId()).ifPresentOrElse(data-> 
                 {
-                    User newUser = new User();
-                    newUser.setEmail(request.getEmail());
-                    newUser.setRole(data);
-                    newUser.setFullname(request.getFullname());
-                    newUser.setOrganization(request.getOrganization());
-                    newUser.setDepartment(request.getDepartment());
+                    User newUser = User.builder()
+                        .email(request.getEmail())
+                        .role(data)
+                        .fullname(request.getFullname())
+                        .organization(request.getOrganization())
+                        .isDeleted(false)
+                        .status(CodefunConstants.COMMON_STATUS.ACTIVE.getValue())
+                        .department(request.getDepartment())
+                    .build();
+                    newUser.setCreatedBy(request.getLoggedUserCreate());
                     userRepository.save(newUser);
                 },
                 ()->{

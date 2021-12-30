@@ -27,7 +27,7 @@ public class ValidateUserService implements BaseService<AddUserRequest, Validati
     }
 
     public ValidationResponse execute(Long userId, String email, String fullname, Long roleId){
-        if(ObjectUtils.isEmpty(email)){
+        if(ObjectUtils.isEmpty(userId) && ObjectUtils.isEmpty(email)){
             log.error("Email is empty for user = {}", email);
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email is required");
         }

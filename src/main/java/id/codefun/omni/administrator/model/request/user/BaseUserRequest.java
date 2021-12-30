@@ -2,11 +2,8 @@ package id.codefun.omni.administrator.model.request.user;
 
 import id.codefun.common.model.request.BaseRequest;
 import io.swagger.annotations.ApiModelProperty;
-
 public class BaseUserRequest extends BaseRequest {
 
-    @ApiModelProperty(value = "User Email")
-    private String email;
     @ApiModelProperty(value = "User Fullname")
     private String fullname;
     @ApiModelProperty(value = "User Organization Detail")
@@ -15,14 +12,6 @@ public class BaseUserRequest extends BaseRequest {
     private String department;
     @ApiModelProperty(value = "User Role ID")
     private Long roleId;
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
     
     public String getFullname() {
         return fullname;
