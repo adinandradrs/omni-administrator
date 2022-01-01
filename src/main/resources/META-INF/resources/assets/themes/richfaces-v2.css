@@ -9,3 +9,7 @@ textarea, input[type="text"], input[type="password"], select {
 .panel-header{
     padding:4px !important;
 }
+
+.rf-ddm-itm-lbl {
+    color:#fff !important;
+}

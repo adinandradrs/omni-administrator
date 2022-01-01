@@ -1,6 +1,8 @@
 package id.codefun.omni.administrator.service.user;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,11 +22,16 @@ public class AddUserService implements BaseService<AddUserRequest, ValidationRes
     private UserRepository userRepository;
     private RoleRepository roleRepository;
     private ValidateUserService validateUserService;
+    private PasswordEncoder passwordEncoder;
+    @Value("app.user.defaultpassword")
+    private String defaultPassword;
 
-    public AddUserService(UserRepository userRepository, ValidateUserService validateUserService, RoleRepository roleRepository){
+    public AddUserService(UserRepository userRepository, ValidateUserService validateUserService, RoleRepository roleRepository,
+        PasswordEncoder passwordEncoder){
         this.userRepository = userRepository;
         this.validateUserService = validateUserService;
         this.roleRepository = roleRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
@@ -38,6 +45,7 @@ public class AddUserService implements BaseService<AddUserRequest, ValidationRes
                         .role(data)
                         .fullname(request.getFullname())
                         .organization(request.getOrganization())
+                        .password(passwordEncoder.encode(defaultPassword))
                         .isDeleted(false)
                         .status(CodefunConstants.COMMON_STATUS.ACTIVE.getValue())
                         .department(request.getDepartment())

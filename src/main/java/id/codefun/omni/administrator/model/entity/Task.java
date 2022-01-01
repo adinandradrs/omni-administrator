@@ -1,7 +1,6 @@
 package id.codefun.omni.administrator.model.entity;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +12,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedBy;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

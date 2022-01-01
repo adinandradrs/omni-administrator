@@ -1,4 +1,4 @@
-package id.codefun.omni.administrator.controller;
+package id.codefun.omni.administrator.beans;
 
 import java.util.Calendar;
 import java.util.List;
@@ -16,12 +16,12 @@ import lombok.extern.slf4j.Slf4j;
 @SessionScope
 @Data
 @Slf4j
-public class SessionController {
+public class AppSessionBean {
 
     private HttpServletRequest servletRequest;
     private List<String> languagePackList;
 
-    public SessionController(HttpServletRequest servletRequest){
+    public AppSessionBean(HttpServletRequest servletRequest){
         this.servletRequest = servletRequest;
     }
 

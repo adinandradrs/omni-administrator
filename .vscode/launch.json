@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ValidateUserService",
+            "request": "launch",
+            "mainClass": "id.codefun.omni.administrator.service.user.ValidateUserService",
+            "projectName": "omni-administator"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-WebAdministratorApplication<web-administrator>",
             "request": "launch",
             "cwd": "${workspaceFolder}",

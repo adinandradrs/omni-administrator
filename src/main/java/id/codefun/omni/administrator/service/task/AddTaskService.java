@@ -44,7 +44,7 @@ public class AddTaskService implements BaseService<AddTaskRequest, ValidationRes
     @Override
     public ValidationResponse execute(AddTaskRequest request) {
         this.doValidateTaskBody(request.getTaskData(), request.getTaskDataBefore(), request.getTaskType());
-        log.info("user {} is create a task with a type as {} for module", request.getCreatedBy(), request.getTaskType(), request.getModule());
+        log.info("user {} is create a task with a type as {} for module {}", request.getCreatedBy(), request.getTaskType(), request.getModule());
         if(request.getTaskType().equals(Constants.TASK_TYPE.CREATE.toString())){
             taskType = Constants.TASK_TYPE.CREATE.toString();
             taskData = JSON.toJSONString(request.getTaskData());
