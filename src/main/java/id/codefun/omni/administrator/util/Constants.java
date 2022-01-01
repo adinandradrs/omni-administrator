@@ -5,7 +5,10 @@ import java.util.Map;
 
 public class Constants {
 
-    public static final String RDS_LOGIN = "BOLOGIN";
+    public static final String RDS_ADMINISTRATOR_LOGIN = "OMNI_ADMINISTRATOR_LOGIN";
+    public static final String MODE_ADD = "add";
+    public static final String MODE_UPDATE = "update";
+    public static final String MODE_READ = "read";
     public static final Map<Integer, String> MONTH_MAP_INDONESIA = new HashMap<Integer, String>(){{
         put(0,"Januari"); put(1,"Februari");
         put(2,"Maret"); put(3,"April");

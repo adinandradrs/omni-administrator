@@ -4,15 +4,58 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ra4j="http://richfaces.org/a4j"
-      xmlns:rich="http://richfaces.org/rich">
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <f:view contentType="text/html">
     <h:head>
         <title>CodeFun | Administrator User Form</title>
-        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+        <ui:include src="../../templates/common-resource.xhtml" />
     </h:head>
     <h:body>
+        <f:metadata>
+            <f:viewAction action="#{appSessionBean.doFetchSession}"/>
+            <f:viewAction action="#{formUserBean.getUserDetail}" />
+        </f:metadata>
         <h:form>
-            
+            <ui:include src="../../templates/header.xhtml" />
+            <ui:include src="../../templates/menu.xhtml" />
+            <rich:panel style="width:97%; margin:0 auto;" header="#{msg['form.user.title']}" headerClass="panel-header">
+                <h:panelGrid id = "panel" columns = "4" border = "0" cellpadding = "10" cellspacing = "5">
+                <h:outputText value="#{msg['label.email']}" />
+                <h:inputText label="#{msg['label.email']}" rendered="#{formUserBean.mode == 'add'}" value="#{formUserBean.addUserRequest.email}" id="emailAdd" />
+                <h:inputText label="#{msg['label.email']}" rendered="#{formUserBean.mode == 'update'}" readonly="true" value="#{formUserBean.userResponse.email}" id="emailUpdate" />
+                <h:outputText value="#{msg['label.fullname']}" />
+                <h:inputText label="#{msg['label.fullname']}" rendered="#{formUserBean.mode == 'add'}" value="#{formUserBean.addUserRequest.fullname}" id="fullnameAdd" />
+                <h:inputText label="#{msg['label.fullname']}" rendered="#{formUserBean.mode == 'update'}" value="#{formUserBean.userResponse.fullname}" id="fullnameUpdate" />
+                <h:outputText value="#{msg['label.department']}" />
+                <h:inputText label="#{msg['label.department']}" id="departmentAdd" rendered="#{formUserBean.mode == 'add'}" value="#{formUserBean.addUserRequest.department}" />
+                <h:inputText label="#{msg['label.department']}" id="departmentUpdate" rendered="#{formUserBean.mode == 'update'}" value="#{formUserBean.userResponse.department}" />
+                <h:outputText value="#{msg['label.organization']}" />
+                <h:inputText label="#{msg['label.organization']}" id="organizationAdd" rendered="#{formUserBean.mode == 'add'}" value="#{formUserBean.addUserRequest.organization}" />
+                <h:inputText label="#{msg['label.organization']}" id="organizationUpdate" rendered="#{formUserBean.mode == 'update'}" value="#{formUserBean.userResponse.organization}" />
+                <h:outputText value = "Status" rendered="#{formUserBean.mode == 'update'}" />
+                <h:selectOneMenu rendered="#{formUserBean.mode == 'update'}" value="#{formUserBean.status}">
+                    <f:selectItems value="#{formUserBean.statusMap.entrySet()}" var="status" itemLabel="#{status.value}" itemValue="#{status.key}" />
+                </h:selectOneMenu>
+                <h:outputText value = "Role" />
+                <h:selectOneMenu rendered="#{formUserBean.mode == 'add'}" value="#{formUserBean.addUserRequest.roleId}">
+                    <f:selectItems value="#{formUserBean.activeRoles}" var="role" itemLabel="#{role.name}" itemValue="#{role.id}" />
+                </h:selectOneMenu>
+                <h:selectOneMenu rendered="#{formUserBean.mode == 'update'}" value="#{formUserBean.userResponse.roleId}">
+                    <f:selectItems value="#{formUserBean.activeRoles}" var="role" itemLabel="#{role.name}" itemValue="#{role.id}" />
+                </h:selectOneMenu>
+                
+                <f:facet name = "footer">
+                    <h:panelGroup style = "display:block; text-align:center">
+                        <h:commandButton id="submit" value="Submit" action="#{formUserBean.doSave()}">
+                            <f:param name="mode" value="#{param['mode']}" />
+                            <f:param name="id" value="#{param['id']}" />
+                        </h:commandButton>
+                    </h:panelGroup>
+                </f:facet>
+                </h:panelGrid>
+            </rich:panel>
+            <ui:include src="../../templates/footer.xhtml" />
         </h:form>
     </h:body>
 </f:view>

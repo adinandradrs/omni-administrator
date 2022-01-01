@@ -32,7 +32,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
-import id.codefun.omni.administrator.model.response.UserLoginResponse;
+import id.codefun.omni.administrator.model.response.user.UserLoginResponse;
 import id.codefun.omni.administrator.service.user.UserSecurityService;
 import id.codefun.omni.administrator.util.Constants;
 import id.codefun.omni.administrator.util.UserUtility;
@@ -58,6 +58,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		"/favicon.ico",
 		"/assets",
 		"/login.jsf",
+		"/apps/user-management/form.jsf"
 	};
 
 	@Value("${api.key.internal}")
@@ -97,7 +98,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
 	protected void configure(HttpSecurity http) throws Exception {		
-		http.cors().and().csrf().disable().authorizeRequests().antMatchers("/apps/**").authenticated();
+		http.cors().and().csrf().disable().authorizeRequests().antMatchers("/app/**").authenticated();
         http.addFilterBefore(serviceFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
 
@@ -173,7 +174,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				if(ObjectUtils.isEmpty(data)){
 					isPermitted.set(false);
 				}
-				else if(ObjectUtils.isNotEmpty(data) && !jwt.equals(JSON.parseObject(cacheUtility.get(Constants.RDS_LOGIN, data.getEmail()), UserLoginResponse.class).getToken())){
+				else if(ObjectUtils.isNotEmpty(data) && !jwt.equals(JSON.parseObject(cacheUtility.get(Constants.RDS_ADMINISTRATOR_LOGIN, data.getEmail()), UserLoginResponse.class).getToken())){
 					isPermitted.set(false);
 				}
 				else{

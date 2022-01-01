@@ -7,8 +7,8 @@ server:
     port: 8090
 joinfaces:
   richfaces:
-    base-skin: emeraldTown
-    skin: emeraldTown
+    base-skin: ruby
+    skin: ruby
 spring:
   datasource:
     name: datasource
@@ -69,6 +69,8 @@ swagger:
 app:
   web:
     path: '/apps'
+  redis:
+    userexpiration: 720
   jwt:
     expiration: 720
     refreshexpiration: 10800
@@ -76,6 +78,7 @@ app:
     refreshsecret: "TuRb0$_p!934#"
   user:
     regexPasswd: "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$"
+    defaultpassword : "c0d3FuN0mn1"
 rest:
   client:
     sslbypass: true

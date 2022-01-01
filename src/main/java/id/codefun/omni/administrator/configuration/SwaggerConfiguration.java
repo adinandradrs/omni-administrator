@@ -29,7 +29,7 @@ public class SwaggerConfiguration {
     }
     
     private ApiInfo getDefaultApiInfo() {
-        return new ApiInfo("Codefun (Backoffice) Docs", "API sandbox for Codefun (Backoffice) service. Only for development purpose and API discovery.", "v1.0", "http://swagger.io/terms/", 
+        return new ApiInfo("Codefun (Administrator) Docs", "API sandbox for Codefun (Administrator) service. Only for development purpose and API discovery.", "v1.0", "http://swagger.io/terms/", 
     		new Contact("Adinandra Dharmasurya", "", "adinandra.dharmasurya@gmail.com"), 
     		"Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0", Collections.emptyList());
 	}

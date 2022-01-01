@@ -35,9 +35,6 @@ public class Permission extends BaseEntity {
 	@Column(name = "icon", length = 150)
 	private String icon;
 
-	@Column(name = "api")
-	private String api;
-
 	@Column(name = "permission_path", length = 100)
 	private String permissionPath;
 
