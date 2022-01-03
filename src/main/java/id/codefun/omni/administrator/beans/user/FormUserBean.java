@@ -6,10 +6,13 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.ManagedBean;
 import com.alibaba.fastjson.JSON;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.server.ResponseStatusException;
 import id.codefun.common.model.request.BaseRequest;
 import id.codefun.common.model.request.FindByIdRequest;
-import id.codefun.omni.administrator.beans.FormBean;
+import id.codefun.common.model.response.ValidationResponse;
+import id.codefun.omni.administrator.beans.BaseFormBean;
 import id.codefun.omni.administrator.model.request.task.AddTaskRequest;
 import id.codefun.omni.administrator.model.request.user.AddUserRequest;
 import id.codefun.omni.administrator.model.request.user.UpdateUserRequest;
@@ -23,12 +26,13 @@ import id.codefun.omni.administrator.util.Constants;
 import id.codefun.service.util.CodefunConstants;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import rx.Single;
 
 @ManagedBean
 @RequestScope
 @Data
 @Slf4j
-public class FormUserBean extends FormBean {
+public class FormUserBean extends BaseFormBean {
 
     private AddUserRequest addUserRequest = AddUserRequest.builder().build();
     private UpdateUserRequest updateUserRequest = UpdateUserRequest.builder().build();
@@ -69,17 +73,17 @@ public class FormUserBean extends FormBean {
         return null;
     }
 
-    public void doSave(){
+    private ValidationResponse onSubmit(){
         if(mode.equals(Constants.MODE_ADD)){
             log.info("addUserRequest = {} with mode {}",JSON.toJSONString(addUserRequest), mode, id);
             this.validateUserService.execute(null, addUserRequest.getEmail(), addUserRequest.getFullname(), addUserRequest.getRoleId());
-            this.addTaskService.execute(
+            return this.addTaskService.execute(
                 AddTaskRequest.builder()
                 .module(Constants.TASK_MODULE.USER.toString())
                 .taskData(JSON.toJSONString(addUserRequest))
                 .taskType(Constants.TASK_TYPE.CREATE.toString())
                 .build()
-            );
+            );    
         }
         else if (mode.equals(Constants.MODE_UPDATE)){
             log.info("updateUserRequest = {} with mode {}",JSON.toJSONString(userResponse), mode, id);
@@ -89,7 +93,7 @@ public class FormUserBean extends FormBean {
             this.updateUserRequest.setRoleId(userResponse.getRoleId());
             this.updateUserRequest.setOrganization(userResponse.getOrganization());
             this.updateUserRequest.setStatus(userResponse.getStatus());
-            this.addTaskService.execute(
+            return this.addTaskService.execute(
                 AddTaskRequest.builder()
                 .module(Constants.TASK_MODULE.USER.toString())
                 .taskData(JSON.toJSONString(addUserRequest))
@@ -98,7 +102,13 @@ public class FormUserBean extends FormBean {
                 .build()
             );
         }
-        
+        else {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Event for user form is undefined");
+        }   
+    }
+
+    public void doSubmit(){
+        Single.fromCallable(this::onSubmit).onErrorReturn(this::onAjaxError).subscribe();
     }
     
 }
