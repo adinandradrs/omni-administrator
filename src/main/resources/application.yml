@@ -3,8 +3,6 @@ redis:
   port: 6379
   dbIndex: 0
   password: r3d1sp4s$
-server:
-    port: 8090
 joinfaces:
   richfaces:
     base-skin: ruby
@@ -12,10 +10,10 @@ joinfaces:
 spring:
   datasource:
     name: datasource
-    url: jdbc:mysql://localhost:3306/omni_administrator
-    username: omniguys
-    password: dbpassword
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:postgresql://localhost:5432/omni-administrator
+    username: "omni-administrator"
+    password: "p4ss0rd!5398@#$s"
+    driver-class-name: org.postgresql.Driver
     platform: mysql
     filters: stat
     maxActive: 20
@@ -54,7 +52,7 @@ spring:
     show-sql: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
+        dialect: org.hibernate.dialect.PostgreSQL81Dialect
         hbm2ddl.auto: update
         jdbc.lob.non_contextual_creation: true
         order_updates: true

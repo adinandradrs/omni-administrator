@@ -16,12 +16,12 @@ import lombok.extern.slf4j.Slf4j;
 @SessionScope
 @Data
 @Slf4j
-public class AppSessionBean {
+public class BaseSessionBean {
 
     private HttpServletRequest servletRequest;
     private List<String> languagePackList;
 
-    public AppSessionBean(HttpServletRequest servletRequest){
+    public BaseSessionBean(HttpServletRequest servletRequest){
         this.servletRequest = servletRequest;
     }
 
