@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>id.codefun.omni.administrator</groupId>
-    <artifactId>omni-administator</artifactId>
+    <artifactId>omni-administrator</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
