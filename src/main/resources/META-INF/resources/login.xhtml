@@ -19,7 +19,7 @@
         <h:form>
             <ui:include src="templates/header.xhtml" />
             <rich:panel style="width:97%; margin:0 auto;" header="#{msg['login.system']}" headerClass="panel-header" bodyClass="login-body">
-                <h4><h:outputLabel value="#{sessionController.getCurrentDateInBahasa()}"></h:outputLabel></h4>
+                <h4><h:outputLabel value="#{baseSessionBean.getCurrentDateInBahasa}" /></h4>
                 <hr class="separator" />
                 <h:panelGrid columns="4" id="grid" style="width:25%;">
                     <h:outputText value="#{msg['login.username']}" />

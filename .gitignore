@@ -2,3 +2,4 @@ target/*
 target/classes/application.yml
 *DS_Store
 Icon?
+target/classes/application.yml
