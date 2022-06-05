@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:a4j="http://richfaces.org/a4j"
       xmlns:rich="http://richfaces.org/rich"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <f:view contentType="text/html">
     <h:head>
         <title>CodeFun | Administrator Login</title>
-        <link rel="stylesheet" type="text/css" href="/assets/themes/login.css" />
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/themes/login.css" />
         <ui:include src="templates/common-resource.xhtml" />
     </h:head>
     <h:body>
@@ -36,11 +35,11 @@
                     <rich:message for="password" ajaxRendered="true" />
                     <h:outputText value="" />
                     <h:outputText value="" />
-                    <h:commandButton value="#{msg['login.submit']}"></h:commandButton>
+                    <h:commandButton value="#{msg['login.submit']}" />
                     <h:outputText value="" />
                     <h:outputText value="" />
                     <h:outputText value="" />
-                    <h:commandLink value="#{msg['login.forgotpassword']}"></h:commandLink>
+                    <h:commandLink value="#{msg['login.forgotpassword']}" />
                 </h:panelGrid>
             </rich:panel>
             <ui:include src="templates/footer.xhtml" />
