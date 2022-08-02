@@ -15,7 +15,6 @@ import id.codefun.omni.administrator.repository.UserRepository;
 import id.codefun.omni.administrator.util.Constants;
 import id.codefun.omni.administrator.util.UserUtility;
 import id.codefun.service.util.CacheUtility;
-import id.codefun.service.util.CodefunConstants;
 import lombok.extern.log4j.Log4j2;
 
 @Service
@@ -62,10 +61,10 @@ public class SignInUserService implements BaseService<SignInUserRequest, UserLog
                 return userLoginResponse;
             }).orElseThrow(()->{
                 log.error("user is not elibile to login for email = {}", request.getEmail());
-                throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, CodefunConstants.ERR_MSG_UNAUTHORIZED);
+                throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, id.codefun.service.util.Constants.ERR_MSG_UNAUTHORIZED);
             });
         }
-        throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, CodefunConstants.ERR_MSG_UNAUTHORIZED);
+        throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, id.codefun.service.util.Constants.ERR_MSG_UNAUTHORIZED);
     }
     
 }

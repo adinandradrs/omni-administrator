@@ -7,7 +7,7 @@ import id.codefun.common.model.request.FindByIdRequest;
 import id.codefun.common.service.BaseService;
 import id.codefun.omni.administrator.model.response.user.UserResponse;
 import id.codefun.omni.administrator.repository.UserRepository;
-import id.codefun.service.util.CodefunConstants;
+import id.codefun.service.util.Constants;
 
 @Service
 public class DetailUserService implements BaseService<FindByIdRequest, UserResponse> {
@@ -30,7 +30,7 @@ public class DetailUserService implements BaseService<FindByIdRequest, UserRespo
         .organization(user.getOrganization())
         .build())
         .orElseThrow(()->{
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, CodefunConstants.ERR_MSG_DATA_NOT_FOUND);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, Constants.ERR_MSG_DATA_NOT_FOUND);
         });
     }
     

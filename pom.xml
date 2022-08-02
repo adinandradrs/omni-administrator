@@ -19,8 +19,8 @@
         <joinfaces.version>4.3.8</joinfaces.version>
         <jaxb-core.version>3.0.1</jaxb-core.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
-        <codefun-common.version>1.0</codefun-common.version>
-        <codefun-service.version>1.0</codefun-service.version>
+        <codefun-common.version>1.0-SNAPSHOT</codefun-common.version>
+        <codefun-service.version>1.0-SNAPSHOT</codefun-service.version>
         <springfox.version>3.0.0</springfox.version>
         <lombok.version>1.18.20</lombok.version>
         <jstl.version>1.2</jstl.version>

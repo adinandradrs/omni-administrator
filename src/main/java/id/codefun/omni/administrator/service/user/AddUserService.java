@@ -13,7 +13,7 @@ import id.codefun.omni.administrator.model.entity.User;
 import id.codefun.omni.administrator.model.request.user.AddUserRequest;
 import id.codefun.omni.administrator.repository.RoleRepository;
 import id.codefun.omni.administrator.repository.UserRepository;
-import id.codefun.service.util.CodefunConstants;
+import id.codefun.service.util.Constants;
 import lombok.extern.log4j.Log4j2;
 @Service
 @Log4j2
@@ -47,7 +47,7 @@ public class AddUserService implements BaseService<AddUserRequest, ValidationRes
                         .organization(request.getOrganization())
                         .password(passwordEncoder.encode(defaultPassword))
                         .isDeleted(false)
-                        .status(CodefunConstants.COMMON_STATUS.ACTIVE.getValue())
+                        .status(Constants.COMMON_STATUS.ACTIVE.getValue())
                         .department(request.getDepartment())
                     .build();
                     newUser.setCreatedBy(request.getLoggedUserCreate());
